@@ -39,6 +39,21 @@ void displayTodoList(){
     std::cout << i + 1 << ". " << todoList[i].title << " - " << todoList[i].description << (todoList[i].completed ? " [Completed]" : "") << std::endl;
   }
 }
+
+void deleteTaskItem() {
+  displayTodoList();
+  std::cout << "Enter the number of the item to delete: ";
+  int index;
+  std::cin >> index;
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  if (index > 0 && index <= todoList.size()) {
+    todoList.erase(todoList.begin() + index - 1);
+    std::cout << "Item " << index << " deleted." << std::endl;
+  } else {
+    std::cout << "Invalid item number." << std::endl;
+  }
+}
+
 int main() {
   while(true){
     displayInterface();
@@ -60,6 +75,7 @@ int main() {
         displayTodoList();
         break;
       case 3:
+        deleteTaskItem();
         break;
       case 4:
         std::cout << "Exiting tdL." << std::endl;
