@@ -21,6 +21,18 @@ void displayInterface(){
   std::cout << "4. Exit" << std::endl;
   std::cout << "Enter your choice" << std::endl;
 }
+
+void createTodoItem(){
+  TodoItem task;
+  std::cout << "Create a new task" << std::endl;
+  std::cout << "Title: ";
+  std::getline(std::cin, task.title);
+  std::cout << "Description: ";
+  std::getline(std::cin, task.description);
+  task.completed = false;
+  todoList.push_back(task);
+  std::cout << "\"" << task.title << "\" has been added to the list.\n";
+}
 int main() {
   while(true){
     displayInterface();
@@ -36,6 +48,7 @@ int main() {
 
     switch(choice){
       case 1:
+        createTodoItem();
         break;
       case 2:
         break;
