@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <limits>
+#include <cstdlib>
 
 struct TodoItem {
   std::string title;
@@ -54,8 +55,17 @@ void deleteTaskItem() {
   }
 }
 
+void clearScreen() {
+#if defined (__LINUX__) || defined(__gnu_linux__) || defined(__linux__) || defined(__APPLE__)
+  system("clear");
+#elif defined _WIN32
+  system("cls");
+#endif
+}
+
 int main() {
   while(true){
+    clearScreen();
     displayInterface();
     int choice;
     std::cin >> choice;
