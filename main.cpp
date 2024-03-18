@@ -1,3 +1,4 @@
+#include <ios>
 #include <iostream>
 #include <ostream>
 #include <vector>
@@ -25,6 +26,13 @@ int main() {
     displayInterface();
     int choice;
     std::cin >> choice;
+
+    if (std::cin.fail()){
+      std::cin.clear();
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+      std::cout << "Invalid input, please enter a number" << std::endl;
+      continue;
+    }
 
     switch(choice){
       case 1:
