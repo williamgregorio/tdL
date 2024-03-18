@@ -32,6 +32,13 @@ void createTodoItem(){
   todoList.push_back(task);
   std::cout << task.title << " has been added to the list.\n";
 }
+
+void displayTodoList(){
+  std::cout << "Task list:" << std::endl;
+  for (int i = 0; i < todoList.size(); i++) {
+    std::cout << i + 1 << ". " << todoList[i].title << " - " << todoList[i].description << (todoList[i].completed ? " [Completed]" : "") << std::endl;
+  }
+}
 int main() {
   while(true){
     displayInterface();
@@ -50,6 +57,7 @@ int main() {
         createTodoItem();
         break;
       case 2:
+        displayTodoList();
         break;
       case 3:
         break;
