@@ -36,7 +36,7 @@ void createTodoItem(){
 void displayTodoList(){
   std::cout << "Task list:" << std::endl;
   for (int i = 0; i < todoList.size(); i++) {
-    std::cout << i + 1 << ". " << todoList[i].title << " - " << todoList[i].description << (todoList[i].completed ? " [Completed]" : "") << std::endl;
+    std::cout << i + 1 << ". " << todoList[i].title << " - " << todoList[i].description << (todoList[i].completed ? " [Completed]" : " [Not Completed]") << std::endl;
   }
 }
 
