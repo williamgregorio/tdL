@@ -1,4 +1,3 @@
-#include <ios>
 #include <iostream>
 #include <ostream>
 #include <vector>
@@ -45,7 +44,7 @@ int main() {
       std::cout << "Invalid input, please enter a number" << std::endl;
       continue;
     }
-
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     switch(choice){
       case 1:
         createTodoItem();
