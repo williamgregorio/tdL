@@ -25,13 +25,13 @@ void displayInterface(){
 void createTodoItem(){
   TodoItem task;
   std::cout << "Create a new task" << std::endl;
-  std::cout << "Title: ";
+  std::cout << "Title: " << std::endl;
   std::getline(std::cin, task.title);
-  std::cout << "Description: ";
+  std::cout << "Description: " << std::endl;
   std::getline(std::cin, task.description);
   task.completed = false;
   todoList.push_back(task);
-  std::cout << "\"" << task.title << "\" has been added to the list.\n";
+  std::cout << task.title << " has been added to the list.\n";
 }
 int main() {
   while(true){
