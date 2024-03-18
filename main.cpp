@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ostream>
 #include <vector>
+#include <string>
 
 struct TodoItem {
   std::string title;
@@ -21,6 +22,21 @@ void displayInterface(){
 int main() {
   while(true){
     displayInterface();
+    int choice;
+    std::cin >> choice;
+
+    switch(choice){
+      case 1:
+        break;
+      case 2:
+        break;
+      case 3:
+        break;
+      case 4:
+        std::cout << "Exiting tdL." << std::endl;
+        return 0;
+      default:
+        std::cout << "Unknown choice, please enter a correct number.";
+    }
   }
-  return 0;
 }
